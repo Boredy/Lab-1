@@ -10,10 +10,9 @@ public class Craps {
 
 		LinkedList<Roll> rolls = r.getRolls();
 
-		for (int i = 0; i < r.getRolls().size(); i++) {
+		for (int i = 0; i < rolls.size(); i++) {
 
-			System.out.print(rolls.get(i).getScore());
-			System.out.print(", ");
+			System.out.printf("%d ", rolls.get(i).getScore());
 
 		}
 
