@@ -6,7 +6,7 @@ public class Round {
 
 	private int ComeOutScore;
 	private int ContinueRoll;
-	private eGameResult eGameResult;
+	private static eGameResult eGameResult;
 	private LinkedList<Roll> rolls = new LinkedList<Roll>();
 
 	public Round() {
@@ -20,9 +20,6 @@ public class Round {
 
 		this.ComeOutScore = ComeOutRoll.getScore();
 
-		if (!roundOver) {
-			System.out.printf("%s%d%n", "Player's point is ", ComeOutScore);
-		}
 
 		
 		// TODO: value the eGameResult after the round is complete
@@ -40,6 +37,10 @@ public class Round {
 		case 12:
 			roundOver = true;
 			eGameResult = eGameResult.CRAPS;
+		}
+		
+		if (!roundOver && eGameResult != eGameResult.NATURAL && eGameResult != eGameResult.CRAPS) {
+			System.out.printf("%s%d%n", "Player's point is ", ComeOutScore);
 		}
 
 		
@@ -67,10 +68,9 @@ public class Round {
 				roundOver = true;
 				eGameResult = eGameResult.SEVEN_OUT;
 			}
-				
-			
-
 		}
+		
+
 
 	}
 
