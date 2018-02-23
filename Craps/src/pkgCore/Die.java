@@ -1,10 +1,10 @@
 package pkgCore;
 
-import java.security.SecureRandom;
+import java.util.Random;
 
 public class Die {
 
-	private static final SecureRandom randomNumbers = new SecureRandom();
+	private static Random randomNumbers = new Random();
 
 	private int DieValue;
 

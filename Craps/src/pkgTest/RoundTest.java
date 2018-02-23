@@ -3,7 +3,9 @@ package pkgTest;
 import static org.junit.Assert.fail;
 //import static org.junit.jupiter.api.Assertions.*;
 
+
 import org.junit.jupiter.api.Test;
+
 
 import pkgCore.Round;
 import pkgCore.eGameResult;
@@ -11,7 +13,10 @@ import pkgCore.eGameResult;
 class RoundTest {
 
 	@Test
-	void test() {
+	void testGameLogic() {
+		
+		
+		for (int i = 0; i <= 1000; i++) {
 		
 		Round r = new Round();
 		
@@ -51,8 +56,29 @@ class RoundTest {
 				fail("Game logic error");
 			}
 			
-		}	
+		}
+
+		}
+	}
+	
+	@Test
+	void Rolllist () {
+		
+		
+		for (int n = 0; n < 1000; n++) {
+			
+		Round r = new Round();
+
+		
+		for (int i = 0; i < r.getRolls().size(); i++) {
+			
+			System.out.printf("%d ", r.getRolls().get(i).getScore());	
+		}
+		
+		System.out.println(r.getResult());
 		
 	}
-
+		
+	}		
 }
+	
